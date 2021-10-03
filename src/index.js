@@ -6,10 +6,11 @@ import reportWebVitals from './reportWebVitals';
 import { createStore } from 'redux';
 import rootReducer from './modules';
 import { Provider } from 'react-redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, composeWithDevTools());
 // if you check that state is printed well, then you can make code below commentary
-console.log(store.getState());
+// console.log(store.getState());
 
 ReactDOM.render(
   //if you wrap your App with Provider that have store, All of Components that we render can access to rodux store  
